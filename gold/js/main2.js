@@ -1,4 +1,5 @@
 $('#home').on('pageinit', function(){
+	
 	//code needed for home page goes here
 });	
 		
@@ -18,7 +19,7 @@ $('#newMaint').on('pageinit', function(){
 					html += '<li>' + fieldName + '<li>';
 				};
 				$("#recordErrors ul").html(html);
-				console.log(label.text());
+				
 			},
 			
 			submitHandler: function() {
@@ -38,6 +39,10 @@ parseForm = function(data) {
 //The functions below can go inside or outside the pageinit function for the page in which it is needed.
 
 var autofillData = function (){
+	for(var n in json){
+	var id = Math.floor(Math.random()*1000000001);
+	localStorage.setItem(id, JSON.stringify(json[n]));
+	}
 	
 };
 
@@ -45,7 +50,7 @@ var getData = function(){
 
 };
 r
-var storeData = function(data, key){
+/*var storeData = function(data, key){
 	if(!key){
 	var id = Math.floor(Math.random()*1000000001);
 	}else{
@@ -68,10 +73,10 @@ var storeData = function(data, key){
 function getStorage (){
 	if(localStorage.length === 0){
 		alert("nothing to see here. so i added some for you to look cool");
-		autoFill();
+		//autoFill();
 		};
 		
-	var savedPage = getelementbyid("#schedule")
+	var savedPage = $("#schFill")
 	var makeDiv = document.createElement("div");
 	makeDiv.setAttribute("id","savedItem");
 	var makeList = document.createElement("ul");
@@ -100,7 +105,7 @@ function getStorage (){
 		
 	}
 	
-}; 
+}; */
 
 var	deleteItem = function (){
 			
@@ -109,4 +114,5 @@ var	deleteItem = function (){
 var clearLocal = function(){
 
 };
+
 
